@@ -1,0 +1,21 @@
+Source: ssl-cert
+Section: utils
+Priority: optional
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Uploaders: Tollef Fog Heen <tfheen@debian.org>, Stefan Fritsch <sf@debian.org>
+Build-Depends: debhelper (>= 7), po-debconf
+Standards-Version: 3.9.8
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-apache/ssl-cert.git
+Vcs-Git: git://anonscm.debian.org/pkg-apache/ssl-cert.git
+
+Package: ssl-cert
+Architecture: all
+Depends: ${misc:Depends}, openssl (>= 0.9.8g-9), adduser
+Suggests: openssl-blacklist
+Multi-Arch: foreign
+Description: simple debconf wrapper for OpenSSL
+ This package enables unattended installs of packages that
+ need to create SSL certificates.
+ .
+ It is a simple wrapper for OpenSSL's certificate request utility that
+ feeds it with the correct user variables.

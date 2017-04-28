@@ -1,0 +1,33 @@
+.TH make-ssl-cert 8
+.SH NAME
+make-ssl-cert - Debconf wrapper for openssl
+.SH SYNOPSIS
+.B make-ssl-cert
+\fItemplate\fR \fIoutput-certificate\fR [\fB\-\-force\-overwrite\fR]
+.br
+.B make-ssl-cert generate-default-snakeoil
+[\fB\-\-force\-overwrite\fR]
+.br
+.SH "DESCRIPTION"
+make-ssl-cert is a simple debconf to openssl wrapper to create self-signed
+certificates.
+It requires a source template (Ex: /usr/share/ssl-cert/ssleay.cnf)
+and it will place the new generated certificate in the specified
+output file.
+.br
+Invoked with "generate-default-snakeoil", it will generate
+/etc/ssl/certs/ssl-cert-snakeoil.pem and /etc/ssl/private/ssl-cert-snakeoil.key.
+.SH OPTIONS
+A summary of options are included below.
+.TP
+.B \-\-force\-overwrite
+Use this option
+.B ONLY
+when strictly required since it will overwrite the output certificate.
+.SH "SEE ALSO"
+.IR "openssl" (1)
+.SH AUTHOR
+The program author is Thom May <thom@debian.org>, manual
+page was written for completness by Fabio M. Di Nitto
+<fabbione@fabbione.net>, for the Debian GNU/Linux system
+(but may be used by others).
